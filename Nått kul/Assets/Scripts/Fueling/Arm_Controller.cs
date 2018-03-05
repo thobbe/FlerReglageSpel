@@ -5,6 +5,7 @@ using UnityEngine;
 public class Arm_Controller : MonoBehaviour {
     public float speed;
     public string type;
+    private ControllerInput cont = new ControllerInput();
 	// Use this for initialization
 	void Start () {
 		
@@ -16,7 +17,6 @@ public class Arm_Controller : MonoBehaviour {
         if (type == "Oxygen")
         {
             float moveVertical = Input.GetAxis("Right_Vertical");
-
             transform.localScale += new Vector3(0, 0, 1.0F) * speed * moveVertical;
         }
         else
