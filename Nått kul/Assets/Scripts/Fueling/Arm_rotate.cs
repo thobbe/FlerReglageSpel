@@ -16,11 +16,11 @@ public class Arm_rotate : MonoBehaviour {
     {
         if(type == "Oxygen")
         {
-            float moveHorizontal = Input.GetAxis("Horizontal_Oxygen");
+            float moveHorizontal = Input.GetAxis("Right_Horizontal");
             transform.Rotate(new Vector3(0.0f, 1.0f, 0.0f) * speed * moveHorizontal);
         }else
         {
-            float moveHorizontal = Input.GetAxis("Horizontal_Hydrogen");
+            float moveHorizontal = Input.GetAxis("Left_Horizontal");
             transform.Rotate(new Vector3(0.0f, 1.0f, 0.0f) * speed * moveHorizontal);
 
         }

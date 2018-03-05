@@ -15,13 +15,13 @@ public class Arm_Controller : MonoBehaviour {
 
         if (type == "Oxygen")
         {
-            float moveVertical = Input.GetAxis("Vertical_Oxygen");
+            float moveVertical = Input.GetAxis("Right_Vertical");
 
             transform.localScale += new Vector3(0, 0, 1.0F) * speed * moveVertical;
         }
         else
         {
-            float moveVertical = Input.GetAxis("Vertical_Hydrogen");
+            float moveVertical = Input.GetAxis("Left_Vertical");
 
             transform.localScale += new Vector3(0, 0, 1.0F) * speed * moveVertical;
 
