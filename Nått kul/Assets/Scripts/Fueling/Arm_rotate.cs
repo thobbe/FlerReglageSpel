@@ -5,6 +5,7 @@ using UnityEngine;
 public class Arm_rotate : MonoBehaviour {
     public float speed;
     public string type;
+    private ControllerInput controller = new ControllerInput();
     // Use this for initialization
     void Start()
     {
@@ -16,11 +17,11 @@ public class Arm_rotate : MonoBehaviour {
     {
         if(type == "Oxygen")
         {
-            float moveHorizontal = Input.GetAxis("Right_Horizontal");
+            float moveHorizontal = controller.GetAxis("Left", "Horizontal");
             transform.Rotate(new Vector3(0.0f, 1.0f, 0.0f) * speed * moveHorizontal);
         }else
         {
-            float moveHorizontal = Input.GetAxis("Left_Horizontal");
+            float moveHorizontal = controller.GetAxis("Right", "Horizontal");
             transform.Rotate(new Vector3(0.0f, 1.0f, 0.0f) * speed * moveHorizontal);
 
         }
