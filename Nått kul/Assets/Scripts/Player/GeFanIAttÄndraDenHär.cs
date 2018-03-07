@@ -9,7 +9,7 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 
-public class PlayerController : MonoBehaviour
+public class GiveMeLove: MonoBehaviour
 {  
 
 

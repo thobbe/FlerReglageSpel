@@ -14,33 +14,20 @@ public class ps2joystick
 
 	private string NewLine; // String that contains the x- and z-value  
 	private int[] coordinate = new int[2]; // contains  x- and z- valuesr from joystick (ps2)
-	private int value;
-	private string type; 
-	private int x_value;
-	private int y_value;
-	private int z_value; 
-
+	//private int value;
+	//private string type;
+	private Vector3 movement  = new Vector3 (0, 0, 0);
+    private bool first = true;
+    SerialPort sp = new SerialPort("COM9", 115200); //(9600)  Opens a connection between Unity and a Serialport. 
 
   
-    public ps2joystick() // constructor 
+  public ps2joystick() // constructor 
     {
-    	x_value = y_value = z_value = 0; 
-		NewLine = " ";
-		value = 0;
-		type = " "; 
+     
     }
-  
-	void Start()
+ 
+	void get_data()
 	{
-		sp.Open ();
-		sp.ReadTimeout = 1; // freeze if higher. 
-	}
-
-	void Update()
-	{
-
-		Vector3 movement = new Vector3(x_value, y_value, z_value); // direction that the object will move in 
-
 		if (sp.IsOpen) 
 		{
 			try
@@ -49,34 +36,49 @@ public class ps2joystick
 
 				coordinate = ArduinoValueToUntiyValue(NewLine); // takes the string with info from arduino and creates an array with w ints that can be used in unity.
 
-				MoveObject(ref movement, ref coordinate);
-
-
+                MoveObject(ref movement, ref coordinate);
 			}
 			catch (System.Exception)
 			{
 
 			}
 		}
-
-
 	}
-                                                     
-	public int GetAxis(string type, Vector3 movement)
+
+    private void open()
+    {
+        sp.Open();
+        sp.ReadTimeout = 1; // freeze if higher
+        first = false;
+    }
+                                                 
+	public float GetAxis(string type)
 	{
+        if (first)
+        {
+            open();
+        }
+        
+        get_data ();
 
 
-		if (type == "Verical")
+		if (type == "Vertical")
 		{
-			return movement.z;
-		}else if ( type == "Horizontal")
+            return movement.x;
+        }
+        else if ( type == "Horizontal")
 		{
-			return movement.x; 
-		}
-
-		return value;
+            return movement.z;
+        }
+        else
+        {
+            Debug.Log("Error: Wrong arguments in  ps2Joystick");
+        }
+        return 0.0f;
+       
 
 	}
+
 	public int[] ArduinoValueToUntiyValue(string String)
 	{
 		//This function takes one string with values from the Arduino as argument and convert it to an array with int-values for x and z. 
@@ -98,7 +100,7 @@ public class ps2joystick
 		int y_Value = Convert.ToInt32(yValue); // 
 
 
-		int[] xy_Value = new int[2]; //create an  float-array with x,y value ([x,y])
+		int[] xy_Value = new int[2]; //create an  int-array with x,y value ([x,y])
 		xy_Value[0] = x_Value;
 		xy_Value[1] = y_Value;
 
@@ -124,25 +126,24 @@ public class ps2joystick
     */
 		if (coord[0] < 1 && coord[0] > 0)
 		{  //right 
-			x_value = coord[0];
+			movement.x = coord[0];
 		}
 
 		else
 		{ // left / stand still (if == 0)
-			x_value = -coord[0];
+			movement.x = -coord[0];
 		}
 
 		if (coord[1] < 1 && coord[1] > 0)
 		{ // down
-			z_value = -coord[1];
+			movement.z = -coord[1];
 		}
 		else
 		{ // up / stand still (if == 0) 
-			z_value = coord[1];
+			movement.z = coord[1];
 		}
 
-		movement = new Vector3(x_value, y_value, z_value);
-		print(movement.x);
 	}
 }
+
 
