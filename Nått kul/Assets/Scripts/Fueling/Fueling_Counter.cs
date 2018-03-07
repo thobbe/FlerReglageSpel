@@ -11,41 +11,47 @@ public class Fueling_Counter : MonoBehaviour {
     public Text countText;
     static bool HydrogenIn;
     static bool OxygenIn;
-    
+
+
+    private Arm_Communication ArmCom;
+
+
     // Use this for initialization
     void Start () {
         count = count * 10;
         SetCountText();
-
+        HydrogenIn = false;
+        OxygenIn = false;
     }
     void OnTriggerStay(Collider other)
     {
         if (type == "Hydrogen" && other.gameObject.CompareTag("ArmHydrogen"))
         {
-            HydrogenIn = true;
+           
             if (Input.GetKey(KeyCode.Space) && OxygenIn)
             {
-                count = count + 1;
-            }
-            SetCountText();
-        }
-        else
-            HydrogenIn = false;
-     
-        if (type == "Oxygen" && other.gameObject.CompareTag("ArmOxygen"))
-        {
-
-            if (Input.GetKey(KeyCode.Space))
-            {
-                OxygenIn = true;
+                HydrogenIn = true;
                 count = count + 1;
             }
             else
-                OxygenIn = false;
+                HydrogenIn = false;
+            SetCountText();
+        }
 
+     
+        if (type == "Oxygen" && other.gameObject.CompareTag("ArmOxygen"))
+        {
+            OxygenIn = true;
+            if (Input.GetKey(KeyCode.Space) && HydrogenIn)
+            {
+                
+                count = count + 1;
+            }
             SetCountText();
             
-        }            
+        }
+        else
+            OxygenIn = false;
     }
 
     void SetCountText()
