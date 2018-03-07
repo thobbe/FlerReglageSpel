@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4846188211434046}
   - component: {fileID: 95984622354742650}
-  - component: {fileID: 114816473108665580}
+  - component: {fileID: 114790367507302920}
   m_Layer: 0
   m_Name: Pipe_Hydrogen
   m_TagString: Untagged
@@ -117,7 +117,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: bc31db3b65dd89f479f86948afdc388a, type: 3}
+  - {fileID: 2100000, guid: 4bb4b090d070c494bbdc475e21d380a4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -202,7 +202,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114816473108665580
+--- !u!114 &114790367507302920
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -210,9 +210,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1827092323062954}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85a7a14ff4b07854dad8ed3ca6e660c3, type: 3}
+  m_Script: {fileID: 11500000, guid: 76f57e1bbaac84a4a8bd0eabf9fbf21e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
-  type: 
-  countText: {fileID: 0}
+  type: Hydrogen
+  test: {fileID: 1887422963977078}
+  warning: {fileID: 0}

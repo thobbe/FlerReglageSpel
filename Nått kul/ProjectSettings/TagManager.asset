@@ -3,14 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-<<<<<<< HEAD
-  tags: []
-=======
   tags:
   - Pick-up
   - player
   - Oxygen1
->>>>>>> 5f4a8ca739ac82c9b766849b908c3cf001c4fc93
   layers:
   - Default
   - TransparentFX
