@@ -4,14 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< HEAD
-  - ArmOxygen
-  - Oxygen1
-  - ArmHydrogen
-=======
-  - player
   - Pick-up
->>>>>>> b7892f9bbcc742b7f3189122e19e756f4f6105a2
+  - player
+  - Oxygen1
   layers:
   - Default
   - TransparentFX
@@ -21,10 +16,10 @@ TagManager:
   - UI
   - 
   - 
-  - First Pick-up
-  - Second Pick-up
-  - Third Pick-up
-  - Forth Pick-up
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
