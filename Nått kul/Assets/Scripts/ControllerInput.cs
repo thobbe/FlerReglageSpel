@@ -32,7 +32,7 @@ public class ControllerInput {
         {
             if (type == "Horizontal")
             {
-                return Input.GetAxis("Right_Horizontal");
+               return Input.GetAxis("Right_Horizontal");
             }else if (type == "Vertical")
             {
                 return Input.GetAxis("Right_Vertical");
