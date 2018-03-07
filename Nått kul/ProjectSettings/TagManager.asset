@@ -3,9 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - player
-  - Pick-up
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -15,10 +13,10 @@ TagManager:
   - UI
   - 
   - 
-  - First Pick-up
-  - Second Pick-up
-  - Third Pick-up
-  - Forth Pick-up
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

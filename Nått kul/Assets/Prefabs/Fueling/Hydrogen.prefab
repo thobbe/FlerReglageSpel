@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
-  type: 
+  type: Hydrogen
   countText: {fileID: 0}
 --- !u!136 &136182116366665922
 CapsuleCollider:
