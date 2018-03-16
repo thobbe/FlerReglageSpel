@@ -84,7 +84,7 @@ public class Fueling_Counter_Real : MonoBehaviour
             if (count > 100)
             {
                 delta = Time.time- start;
-                Debug.Log(delta);
+                //Debug.Log(delta);
                 if (warning.intensity == 1 && delta >0.2f )
                 {
                     start = Time.time;

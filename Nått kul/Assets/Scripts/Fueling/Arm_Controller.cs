@@ -7,23 +7,41 @@ public class Arm_Controller : MonoBehaviour {
     public string type;
     private ControllerInput controller = new ControllerInput();
     public GameObject arm;
-
+    private Animator anim;
+    private int counter;
 	// Use this for initialization
 	void Start () {
- 
+        anim = arm.GetComponent<Animator>();
+        counter = 0;
     }
 	
 	// Update is called once per frame
 	void Update () {
-
+        Debug.Log(counter);
         if (controller.ButtonPressed("Button1"))
         {
-            arm.GetComponent<Animator>().SetFloat("Direction",1.0f);
-            arm.GetComponent<Animator>().Play("Robot Arm");
+            anim.Play("Robot Arm");
+            if (counter < 150) {
+                anim.SetFloat("Direction", 1.0f);
+                counter += 1;
+            }
+            else
+            {
+                anim.SetFloat("Direction", 0.0f);
+            }
         }
         else
         {
-            arm.GetComponent<Animator>().SetFloat("Direction", -1.0f);
+            if (counter > 0)
+            {
+                anim.SetFloat("Direction", -1.0f);
+                counter -= 1;
+            }
+            else
+            {
+                anim.SetFloat("Direction", 0.0f);
+            }
+        
         }
        
         if (type == "Oxygen")
