@@ -7,6 +7,8 @@ TagManager:
   - Pick-up
   - player
   - Oxygen1
+  - ArmHydrogen
+  - ArmOxygen
   layers:
   - Default
   - TransparentFX
