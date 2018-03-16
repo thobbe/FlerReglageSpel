@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,11 +18,24 @@ public class Arm_Controller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(counter);
-        if (controller.ButtonPressed("Button1"))
+        //Extend arm
+        if (type == "Hydrogen")
+        {
+            Movement("Left", 355, 185);
+        }
+        else if(type == "Oxygen")
+        {
+            Movement("Right", 175, 5);
+        }
+    }
+
+    void Movement(string name, int max, int min)
+    {
+        if (controller.GetAxis(name, "Vertical") > 0)
         {
             anim.Play("Robot Arm");
-            if (counter < 150) {
+            if (counter < 140)
+            {
                 anim.SetFloat("Direction", 1.0f);
                 counter += 1;
             }
@@ -41,21 +55,15 @@ public class Arm_Controller : MonoBehaviour {
             {
                 anim.SetFloat("Direction", 0.0f);
             }
-        
         }
-       
-        if (type == "Oxygen")
+
+        Debug.Log(arm.transform.rotation.eulerAngles.y);
+        if (!(arm.transform.rotation.eulerAngles.y > max && controller.GetAxis(name, "Horizontal") > 0) &&
+            !(arm.transform.rotation.eulerAngles.y < min && controller.GetAxis(name, "Horizontal") < 0))
         {
-            float moveVertical = controller.GetAxis("Left", "Vertical");
-            transform.localScale += new Vector3(0, 0, 1.0F) * speed * moveVertical;
-
+            arm.transform.Rotate(new Vector3(0, controller.GetAxis(name, "Horizontal"), 0));
         }
-        else
-        {
-            float moveVertical = controller.GetAxis("Right", "Vertical");
 
-            transform.localScale += new Vector3(0, 0, 1.0F) * speed * moveVertical;
-
-        }
     }
+
 }
