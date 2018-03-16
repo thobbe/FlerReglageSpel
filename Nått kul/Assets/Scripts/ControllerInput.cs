@@ -40,6 +40,64 @@ public class ControllerInput {
         }
         return 0.0f;
     }
+
+    public float JoystickPulled(string Joystick_name, string type)
+    {
+        if (Joystick_name == "Left")
+        {
+            if (type == "Horizontal")
+            {
+                if (Input.GetAxis("Left_Horizontal") > 0)
+                {
+                    return 1.0f;
+                }else if(Input.GetAxis("Left_Horizontal") > 0)
+                {
+                    return -1.0f;
+                }
+                return 0;
+            }
+            else if (type == "Vertical")
+            {
+                if (Input.GetAxis("Left_Vertical") > 0)
+                {
+                    return 1.0f;
+                }
+                else if (Input.GetAxis("Left_Vertical") > 0)
+                {
+                    return -1.0f;
+                }
+                return 0;
+            }
+        }
+        else if (Joystick_name == "Right")
+        {
+            if (type == "Horizontal")
+            {
+                if (Input.GetAxis("Right_Horizontal") > 0)
+                {
+                    return 1.0f;
+                }
+                else if (Input.GetAxis("Right_Horizontal") > 0)
+                {
+                    return -1.0f;
+                }
+                return 0;
+            }
+            else if (type == "Vertical")
+            {
+                if (Input.GetAxis("Right_Vertical") > 0)
+                {
+                    return 1.0f;
+                }
+                else if (Input.GetAxis("Right_Vertical") > 0)
+                {
+                    return -1.0f;
+                }
+                return 0;
+            }
+        }
+        return 0.0f;
+    }
     //ButtonPressed returns true if the specefic button has been pressed otherwise it return false.
     //There are four accepted arguments "Button1", "Button2", "Button3" and "Button4".
     //False is also return if the wrong argument is send in and a error messages is displayed in the console.
