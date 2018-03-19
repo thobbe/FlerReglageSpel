@@ -34,7 +34,7 @@ public class Arm_Controller : MonoBehaviour {
         if (controller.GetAxis(name, "Vertical") > 0)
         {
             anim.Play("Robot Arm");
-            if (counter < 140)
+            if (counter < 120)
             {
                 anim.SetFloat("Direction", 1.0f);
                 counter += 1;
@@ -57,7 +57,7 @@ public class Arm_Controller : MonoBehaviour {
             }
         }
 
-        Debug.Log(arm.transform.rotation.eulerAngles.y);
+
         if (!(arm.transform.rotation.eulerAngles.y > max && controller.GetAxis(name, "Horizontal") > 0) &&
             !(arm.transform.rotation.eulerAngles.y < min && controller.GetAxis(name, "Horizontal") < 0))
         {
@@ -66,4 +66,11 @@ public class Arm_Controller : MonoBehaviour {
 
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("ArmOxygen"))
+        {
+            Debug.Log("Test");
+        }
+    }
 }
