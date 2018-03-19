@@ -9,7 +9,7 @@ public class Arm_Controller : MonoBehaviour {
     private ControllerInput controller = new ControllerInput();
     public GameObject arm;
     private Animator anim;
-    private int counter;
+    public int counter;
 	// Use this for initialization
 	void Start () {
         anim = arm.GetComponent<Animator>();
@@ -35,6 +35,7 @@ public class Arm_Controller : MonoBehaviour {
         {
             anim.Play("Robot Arm");
             if (counter < 120)
+
             {
                 anim.SetFloat("Direction", 1.0f);
                 counter += 1;

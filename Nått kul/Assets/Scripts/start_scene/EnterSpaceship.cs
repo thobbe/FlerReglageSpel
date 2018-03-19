@@ -6,12 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class EnterSpaceship: MonoBehaviour
 {
+    public string sceneName;
 
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.CompareTag("Player"))
-		{
-			SceneManager.LoadScene("scene_Erik");
-		}
-	}
+        {
+            Initiate.Fade(sceneName, Color.black, 2.0f);
+        }
+    }
+
 }
