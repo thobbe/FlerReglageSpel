@@ -9,7 +9,7 @@ public class Arm_Controller : MonoBehaviour {
     private ControllerInput controller = new ControllerInput();
     public GameObject arm;
     private Animator anim;
-    private int counter;
+    public int counter;
 	// Use this for initialization
 	void Start () {
         anim = arm.GetComponent<Animator>();
@@ -34,7 +34,7 @@ public class Arm_Controller : MonoBehaviour {
         if (controller.GetAxis(name, "Vertical") > 0)
         {
             anim.Play("Robot Arm");
-            if (counter < 140)
+            if (counter < 130)
             {
                 anim.SetFloat("Direction", 1.0f);
                 counter += 1;
@@ -57,7 +57,7 @@ public class Arm_Controller : MonoBehaviour {
             }
         }
 
-        Debug.Log(arm.transform.rotation.eulerAngles.y);
+        
         if (!(arm.transform.rotation.eulerAngles.y > max && controller.GetAxis(name, "Horizontal") > 0) &&
             !(arm.transform.rotation.eulerAngles.y < min && controller.GetAxis(name, "Horizontal") < 0))
         {

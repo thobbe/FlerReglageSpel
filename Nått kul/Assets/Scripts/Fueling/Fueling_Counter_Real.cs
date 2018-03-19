@@ -33,7 +33,7 @@ public class Fueling_Counter_Real : MonoBehaviour
     {
         if (type == "Hydrogen" && other.gameObject.CompareTag("ArmHydrogen"))
         {
-
+            Debug.Log("Hydrogen");
             if (Input.GetKey(KeyCode.Space) && OxygenIn)
             {
                 HydrogenIn = true;
