@@ -5,10 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Pick-up
-  - player
-  - Oxygen1
-  - ArmHydrogen
-  - ArmOxygen
   layers:
   - Default
   - TransparentFX
