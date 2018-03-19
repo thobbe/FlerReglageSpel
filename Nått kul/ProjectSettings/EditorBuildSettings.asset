@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/scene_Malin.unity
     guid: cbe07b8f3d0d9ff45b2feb5407fd1f06
+  - enabled: 1
+    path: Assets/Scenes/Fueling_real.unity
+    guid: e04fc7d1f9ce0664f8dd364f8aa9531c

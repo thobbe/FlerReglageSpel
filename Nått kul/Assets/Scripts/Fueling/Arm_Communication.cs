@@ -14,11 +14,11 @@ public class Arm_Communication : MonoBehaviour {
     bool Hydrogen3;
     bool Hydrogen4;
 
-    bool HydrogenIn;
+    public bool AA;
     bool OxygenIn;
 
     void Start () {
-		
+        AA = false;
 	}
 	
 	// Update is called once per frame

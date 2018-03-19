@@ -32,10 +32,68 @@ public class ControllerInput {
         {
             if (type == "Horizontal")
             {
-                return Input.GetAxis("Right_Horizontal");
+               return Input.GetAxis("Right_Horizontal");
             }else if (type == "Vertical")
             {
                 return Input.GetAxis("Right_Vertical");
+            }
+        }
+        return 0.0f;
+    }
+
+    public float JoystickPulled(string Joystick_name, string type)
+    {
+        if (Joystick_name == "Left")
+        {
+            if (type == "Horizontal")
+            {
+                if (Input.GetAxis("Left_Horizontal") > 0)
+                {
+                    return 1.0f;
+                }else if(Input.GetAxis("Left_Horizontal") > 0)
+                {
+                    return -1.0f;
+                }
+                return 0;
+            }
+            else if (type == "Vertical")
+            {
+                if (Input.GetAxis("Left_Vertical") > 0)
+                {
+                    return 1.0f;
+                }
+                else if (Input.GetAxis("Left_Vertical") > 0)
+                {
+                    return -1.0f;
+                }
+                return 0;
+            }
+        }
+        else if (Joystick_name == "Right")
+        {
+            if (type == "Horizontal")
+            {
+                if (Input.GetAxis("Right_Horizontal") > 0)
+                {
+                    return 1.0f;
+                }
+                else if (Input.GetAxis("Right_Horizontal") > 0)
+                {
+                    return -1.0f;
+                }
+                return 0;
+            }
+            else if (type == "Vertical")
+            {
+                if (Input.GetAxis("Right_Vertical") > 0)
+                {
+                    return 1.0f;
+                }
+                else if (Input.GetAxis("Right_Vertical") > 0)
+                {
+                    return -1.0f;
+                }
+                return 0;
             }
         }
         return 0.0f;
