@@ -60,7 +60,7 @@ public class Arm_Controller : MonoBehaviour {
 
 
         if (!(arm.transform.rotation.eulerAngles.y > max && controller.GetAxis(name, "Horizontal") > 0) &&
-            !(arm.transform.rotation.eulerAngles.y < min && controller.GetAxis(name, "Horizontal") < 0))
+            !(arm.transform.rotation.eulerAngles.y < min && controller.GetAxis(name, "Horizontal") < 0) && counter ==0)
         {
             arm.transform.Rotate(new Vector3(0, controller.GetAxis(name, "Horizontal"), 0));
         }
