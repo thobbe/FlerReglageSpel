@@ -64,6 +64,16 @@ ModelImporter:
     4300014: Left
     4300016: Plane007
     4300018: Robotfloor
+    6400000: bot
+    6400002: Left
+    6400004: middle
+    6400006: Plane007
+    6400008: Plane008
+    6400010: Plane009
+    6400012: Plane010
+    6400014: Right
+    6400016: Robotfloor
+    6400018: top
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
@@ -98,7 +108,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
