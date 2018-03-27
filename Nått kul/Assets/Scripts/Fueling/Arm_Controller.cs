@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,25 +7,63 @@ public class Arm_Controller : MonoBehaviour {
     public float speed;
     public string type;
     private ControllerInput controller = new ControllerInput();
+    public GameObject arm;
+    private Animator anim;
+    private int counter;
 	// Use this for initialization
 	void Start () {
-		
-	}
+        anim = arm.GetComponent<Animator>();
+        counter = 0;
+    }
 	
 	// Update is called once per frame
 	void Update () {
-    
-        if (type == "Oxygen")
+        //Extend arm
+        if (type == "Hydrogen")
         {
-            float moveVertical = controller.GetAxis("Left", "Vertical");
-            transform.localScale += new Vector3(0, 0, 1.0F) * speed * moveVertical;
+            Movement("Left", 355, 185);
+        }
+        else if(type == "Oxygen")
+        {
+            Movement("Right", 175, 5);
+        }
+    }
+
+    void Movement(string name, int max, int min)
+    {
+        if (controller.GetAxis(name, "Vertical") > 0)
+        {
+            anim.Play("Robot Arm");
+            if (counter < 140)
+            {
+                anim.SetFloat("Direction", 1.0f);
+                counter += 1;
+            }
+            else
+            {
+                anim.SetFloat("Direction", 0.0f);
+            }
         }
         else
         {
-            float moveVertical = controller.GetAxis("Right", "Vertical");
-
-            transform.localScale += new Vector3(0, 0, 1.0F) * speed * moveVertical;
-
+            if (counter > 0)
+            {
+                anim.SetFloat("Direction", -1.0f);
+                counter -= 1;
+            }
+            else
+            {
+                anim.SetFloat("Direction", 0.0f);
+            }
         }
+
+        Debug.Log(arm.transform.rotation.eulerAngles.y);
+        if (!(arm.transform.rotation.eulerAngles.y > max && controller.GetAxis(name, "Horizontal") > 0) &&
+            !(arm.transform.rotation.eulerAngles.y < min && controller.GetAxis(name, "Horizontal") < 0))
+        {
+            arm.transform.Rotate(new Vector3(0, controller.GetAxis(name, "Horizontal"), 0));
+        }
+
     }
+
 }
