@@ -10,15 +10,18 @@ public class Arm_Controller : MonoBehaviour {
     public GameObject arm;
     private Animator anim;
     public int counter;
-	// Use this for initialization
+	
+    // Use this for initialization
 	void Start () {
         anim = arm.GetComponent<Animator>();
+        anim.Play("Robot Arm");
+        anim.SetFloat("Direction", 0.0f);
         counter = 0;
     }
 	
 	// Update is called once per frame
-	void Update () {
-        //Extend arm
+	void FixedUpdate () {
+        //Rotate and extend arm
         if (type == "Hydrogen")
         {
             Movement("Left", 355, 185);
@@ -31,6 +34,7 @@ public class Arm_Controller : MonoBehaviour {
 
     void Movement(string name, int max, int min)
     {
+        //Extend arm 
         if (controller.GetAxis(name, "Vertical") > 0)
         {
             anim.Play("Robot Arm");
@@ -58,20 +62,26 @@ public class Arm_Controller : MonoBehaviour {
             }
         }
 
-
+        //Rotate arm
         if (!(arm.transform.rotation.eulerAngles.y > max && controller.GetAxis(name, "Horizontal") > 0) &&
             !(arm.transform.rotation.eulerAngles.y < min && controller.GetAxis(name, "Horizontal") < 0) && counter ==0)
         {
+            counter = 0;
             arm.transform.Rotate(new Vector3(0, controller.GetAxis(name, "Horizontal"), 0));
         }
-
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("ArmOxygen"))
-        {
-            Debug.Log("Test");
+        //Check if the collid is with the tube
+        if (other.gameObject.CompareTag("Tube"))
+       {
+            //Makes the animation stop 
+            if (controller.GetAxis("Left", "Vertical") > 0)
+            {
+                anim.SetFloat("Direction", 0);
+                counter -= 1;
+            } 
         }
     }
 }

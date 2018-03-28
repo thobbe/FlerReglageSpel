@@ -21,9 +21,10 @@ GameObject:
   - component: {fileID: 4734429369313944}
   - component: {fileID: 33499231117788960}
   - component: {fileID: 23389684634461906}
+  - component: {fileID: 64225639336277576}
   m_Layer: 0
   m_Name: Tube001
-  m_TagString: Untagged
+  m_TagString: Tube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,6 +39,7 @@ GameObject:
   - component: {fileID: 4846188211434046}
   - component: {fileID: 95984622354742650}
   - component: {fileID: 114790367507302920}
+  - component: {fileID: 136595399542894478}
   m_Layer: 0
   m_Name: Pipe_Hydrogen
   m_TagString: Untagged
@@ -55,6 +57,7 @@ GameObject:
   - component: {fileID: 4906946922863388}
   - component: {fileID: 33338063652530428}
   - component: {fileID: 23930756048216734}
+  - component: {fileID: 136847757306522450}
   m_Layer: 0
   m_Name: Cylinder001
   m_TagString: Untagged
@@ -185,6 +188,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1727684485697914}
   m_Mesh: {fileID: 4300000, guid: bc31db3b65dd89f479f86948afdc388a, type: 3}
+--- !u!64 &64225639336277576
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1727684485697914}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: bc31db3b65dd89f479f86948afdc388a, type: 3}
 --- !u!95 &95984622354742650
 Animator:
   serializedVersion: 3
@@ -217,3 +234,29 @@ MonoBehaviour:
   type: Hydrogen
   test: {fileID: 1887422963977078}
   warning: {fileID: 0}
+--- !u!136 &136595399542894478
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1827092323062954}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &136847757306522450
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1887422963977078}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 0.7878465
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.000000014901165, z: 0.100000024}
