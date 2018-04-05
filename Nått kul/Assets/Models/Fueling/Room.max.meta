@@ -110,6 +110,26 @@ ModelImporter:
     4300034: Box009
     4300036: Box010
     4300038: Box011
+    6400000: bot
+    6400002: Box002
+    6400004: Box003
+    6400006: Box004
+    6400008: Box005
+    6400010: Box006
+    6400012: Box007
+    6400014: Box008
+    6400016: Box009
+    6400018: Box010
+    6400020: Box011
+    6400022: Left
+    6400024: middle
+    6400026: Plane007
+    6400028: Plane008
+    6400030: Plane009
+    6400032: Plane010
+    6400034: Right
+    6400036: Robotfloor
+    6400038: top
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
