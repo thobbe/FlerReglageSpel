@@ -5,7 +5,7 @@ using UnityEngine;
 public class PickUpObject : MonoBehaviour {
 
     public Transform player;
-    public float throwForce = 10;
+    public float throwForce = 30;
     public bool hasPlayer = false;
     bool beingCarried = false;
 
@@ -13,7 +13,8 @@ public class PickUpObject : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player"))
+		
+        if(other.gameObject.CompareTag("Player")) //will only work if the Player has it's tag set to Player in Unity!!!!!!
         {
             hasPlayer = true;
         }
@@ -22,6 +23,7 @@ public class PickUpObject : MonoBehaviour {
 
     void OnTriggerExit(Collider other)
     {
+		
         if (other.gameObject.CompareTag("Player"))
         {
             hasPlayer = false;
