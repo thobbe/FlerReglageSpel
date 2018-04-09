@@ -9,7 +9,8 @@ public class Fueling_Counter_Real : MonoBehaviour
     public int count;
     public string type;
     public GameObject test;
-    private Color col;
+	public ParticleSystem fluid;
+    //private Color col;
     static bool HydrogenIn;
     static bool OxygenIn;
     Renderer rend;
@@ -17,7 +18,9 @@ public class Fueling_Counter_Real : MonoBehaviour
     public Light warning;
     float delta = 0.0f;
     float start = 0.0f;
-   
+	public GameObject fuel;
+	private float min = 0;
+	private float max = 6.25f;
 
     // Use this for initialization
     void Start()
@@ -26,65 +29,44 @@ public class Fueling_Counter_Real : MonoBehaviour
         SetCountText();
         HydrogenIn = false;
         OxygenIn = false;
-        col = new Color(1, 1, 1);
-
-}
+		fluid.Stop();
+       // col = new Color(1, 1, 1);
+    }
     void OnTriggerStay(Collider other)
     {
-        if (type == "Hydrogen" && other.gameObject.CompareTag("ArmHydrogen"))
+        if (other.gameObject.CompareTag("Fueling_Cell"))
         {
-            Debug.Log("Hydrogen");
-            if (Input.GetKey(KeyCode.Space) && OxygenIn)
-            {
-                HydrogenIn = true;
-                count = count + 1;
-            }
-            else
-                HydrogenIn = false;
-            SetCountText();
+            GameObject temp = other.gameObject;
+            Arm_Controller playerScript = temp.transform.parent.gameObject.transform.parent.gameObject.transform.parent.gameObject.transform.parent.gameObject.GetComponent<Arm_Controller>();
+			if (controller.ButtonPressed ("Button1") && playerScript.counter == 120) {
+				if (count != 100) {
+					fluid.Play ();
+					count += 1;
+					fuel.transform.localScale += new Vector3 (0, (max - min) / 100, 0);
+				} 
+			} else {
+				fluid.Stop();
+			}
         }
-
-
-        if (type == "Oxygen" && other.gameObject.CompareTag("ArmOxygen"))
-        {
-            OxygenIn = true;
-            if (Input.GetKey(KeyCode.Space) && HydrogenIn)
-            {
-
-                count = count + 1;
-            }
-            SetCountText();
-
-        }
-        else
-            OxygenIn = false;
     }
 
     void SetCountText()
     {
-        int percent = (count / 10);
-        if (!(percent > 100))
-        {
-            //Fuel_level.value;
-        }
-
 
     }
 
     private void Update()
     {
-        if (controller.ButtonPressed("Button1")){
-            count = count + 1;
+ 
             if (count == 100)
             {
                 float start = Time.time;
                 warning.intensity = 1;
             }
 
-            if (count > 100)
+            /*if (count > 100)
             {
                 delta = Time.time- start;
-                //Debug.Log(delta);
                 if (warning.intensity == 1 && delta >0.2f )
                 {
                     start = Time.time;
@@ -95,14 +77,10 @@ public class Fueling_Counter_Real : MonoBehaviour
                     start = Time.time;
                     warning.intensity = 1;
                 }
-            }
-        }
-        
-       
-
-
-
-        float number = (float)count / 100.0f;
-          rend.material.color = new Color(1.0f-number, 1.0f, 1.0f-number);
+            }*/
+        /*float number = (float)count / 100.0f;
+        rend.material.color = new Color(1.0f-number, 1.0f, 1.0f-number);*/
     }
+
+
 }
