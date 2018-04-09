@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class moving : MonoBehaviour
+public class mover : MonoBehaviour
 {
 
     private ps2joystick temp = new ps2joystick();
