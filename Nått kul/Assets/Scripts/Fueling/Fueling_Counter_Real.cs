@@ -9,7 +9,8 @@ public class Fueling_Counter_Real : MonoBehaviour
     public int count;
     public string type;
     public GameObject test;
-    private Color col;
+	public ParticleSystem fluid;
+    //private Color col;
     static bool HydrogenIn;
     static bool OxygenIn;
     Renderer rend;
@@ -17,7 +18,9 @@ public class Fueling_Counter_Real : MonoBehaviour
     public Light warning;
     float delta = 0.0f;
     float start = 0.0f;
-   
+	public GameObject fuel;
+	private float min = 0;
+	private float max = 6.25f;
 
     // Use this for initialization
     void Start()
@@ -26,7 +29,8 @@ public class Fueling_Counter_Real : MonoBehaviour
         SetCountText();
         HydrogenIn = false;
         OxygenIn = false;
-        col = new Color(1, 1, 1);
+		fluid.Stop();
+       // col = new Color(1, 1, 1);
     }
     void OnTriggerStay(Collider other)
     {
@@ -34,11 +38,15 @@ public class Fueling_Counter_Real : MonoBehaviour
         {
             GameObject temp = other.gameObject;
             Arm_Controller playerScript = temp.transform.parent.gameObject.transform.parent.gameObject.transform.parent.gameObject.transform.parent.gameObject.GetComponent<Arm_Controller>();
-            if (controller.ButtonPressed("Button1") && playerScript.counter ==120)
-            {
-                
-                count += 1;
-            }
+			if (controller.ButtonPressed ("Button1") && playerScript.counter == 120) {
+				if (count != 100) {
+					fluid.Play ();
+					count += 1;
+					fuel.transform.localScale += new Vector3 (0, (max - min) / 100, 0);
+				} 
+			} else {
+				fluid.Stop();
+			}
         }
     }
 
@@ -49,7 +57,7 @@ public class Fueling_Counter_Real : MonoBehaviour
 
     private void Update()
     {
-           
+ 
             if (count == 100)
             {
                 float start = Time.time;
@@ -70,8 +78,8 @@ public class Fueling_Counter_Real : MonoBehaviour
                     warning.intensity = 1;
                 }
             }*/
-        float number = (float)count / 100.0f;
-        rend.material.color = new Color(1.0f-number, 1.0f, 1.0f-number);
+        /*float number = (float)count / 100.0f;
+        rend.material.color = new Color(1.0f-number, 1.0f, 1.0f-number);*/
     }
 
 
