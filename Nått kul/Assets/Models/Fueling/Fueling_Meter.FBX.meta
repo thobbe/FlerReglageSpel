@@ -1,14 +1,31 @@
 fileFormatVersion: 2
-guid: 0f5a7cd71ebf2ca4fb014c7429f4ee2d
+guid: 317855490c695044390fcb3042099953
+timeCreated: 1522832517
+licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Tube001
+    100004: Tube002
+    100006: Tube003
     400000: //RootNode
+    400002: Tube001
+    400004: Tube002
+    400006: Tube003
     2100000: No Name
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Box001
+    2300000: Tube001
+    2300002: Tube002
+    2300004: Tube003
+    3300000: Tube001
+    3300002: Tube002
+    3300004: Tube003
+    4300000: Tube001
+    4300002: Tube002
+    4300004: Tube003
+    6400000: Tube001
+    6400002: Tube002
+    6400004: Tube003
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -42,7 +59,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
