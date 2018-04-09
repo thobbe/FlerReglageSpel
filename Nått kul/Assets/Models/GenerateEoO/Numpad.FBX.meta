@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: 82402eb028fb5db4ab8834653f33d359
-timeCreated: 1523258033
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -35,21 +33,12 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-<<<<<<< HEAD
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
-=======
-    motionNodeName:
-    rigImportErrors:
-    rigImportWarnings:
-    animationImportErrors:
-    animationImportWarnings:
-    animationRetargetingWarnings:
->>>>>>> bdf82b8bab5471814ab4d4a2f4336d93bd7e71a3
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     animationCompression: 1
@@ -101,11 +90,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-<<<<<<< HEAD
     rootMotionBoneName: 
-=======
-    rootMotionBoneName:
->>>>>>> bdf82b8bab5471814ab4d4a2f4336d93bd7e71a3
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
@@ -114,12 +99,6 @@ ModelImporter:
   animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
-<<<<<<< HEAD
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-=======
-  userData:
-  assetBundleName:
-  assetBundleVariant:
->>>>>>> bdf82b8bab5471814ab4d4a2f4336d93bd7e71a3
