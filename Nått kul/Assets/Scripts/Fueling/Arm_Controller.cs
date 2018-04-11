@@ -30,6 +30,8 @@ public class Arm_Controller : MonoBehaviour {
         {
             Movement("Right", 175, 5);
         }
+        if (Input.GetKey("escape"))
+            Application.Quit();
     }
 
     void Movement(string name, int max, int min)

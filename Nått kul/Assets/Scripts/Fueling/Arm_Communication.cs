@@ -4,25 +4,40 @@ using UnityEngine;
 
 public class Arm_Communication : MonoBehaviour {
 
-    bool Oxygen1;
-    bool Oxygen2;
-    bool Oxygen3;
-    bool Oxygen4;
-
-    bool Hydrogen1;
-    bool Hydrogen2;
-    bool Hydrogen3;
-    bool Hydrogen4;
-
-    public bool AA;
-    bool OxygenIn;
+    bool Oxygen;
+    bool Hydrogen;
+    int OT, OM, OB, HT, HM, HB;
 
     void Start () {
-        AA = false;
-	}
+        Oxygen = false;
+        Hydrogen = false;
+        OT= OM= OB=HT= HM= HB =0;
+    }
 	
+    public void SetBool(string Type, bool Value)
+    {
+        if(Type == "Oxygen")
+        {
+            Oxygen = Value;
+        }else if(Type == "Hydrogen")
+        {
+            Hydrogen = Value;
+        }
+    }
+
+    public bool Ready()
+    {
+        if(Oxygen && Hydrogen)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 	// Update is called once per frame
-	void Update () {
-		
+	void Update ()
+    {	
 	}
 }
