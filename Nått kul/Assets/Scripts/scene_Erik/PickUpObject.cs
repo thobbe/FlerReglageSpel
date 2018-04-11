@@ -8,6 +8,7 @@ public class PickUpObject : MonoBehaviour {
     public float throwForce = 30;
     public bool hasPlayer = false;
     bool beingCarried = false;
+    public bool inserted = false;
 
     private Rigidbody rb;
 
@@ -18,7 +19,15 @@ public class PickUpObject : MonoBehaviour {
         {
             hasPlayer = true;
         }
-        
+
+        if (other.gameObject.CompareTag("Zone")) 
+        {
+            inserted = true;
+            Destroy(gameObject);
+            //Debug.Log("Batteri");
+        }
+
+
     }
 
     void OnTriggerExit(Collider other)

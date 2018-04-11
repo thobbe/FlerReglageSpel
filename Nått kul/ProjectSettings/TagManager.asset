@@ -9,6 +9,8 @@ TagManager:
   - Tube
   - Oxygen1
   - Fueling_Cell
+  - Battery
+  - Zone
   layers:
   - Default
   - TransparentFX
