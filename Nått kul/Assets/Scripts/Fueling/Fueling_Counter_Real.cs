@@ -5,66 +5,80 @@ using UnityEngine.UI;
 
 public class Fueling_Counter_Real : MonoBehaviour
 {
+    //Controller object
     ControllerInput controller = new ControllerInput();
-    public int count;
+    
+    //Variables for amount fuel
+	public int Start_amount;
+	private int count;
+	private int max_amount = 1000;
     public string type;
     public GameObject test;
 	public ParticleSystem fluid;
     //private Color col;
-    static bool HydrogenIn;
-    static bool OxygenIn;
-    Renderer rend;
-    private Arm_Communication ArmCom;
+    public Arm_Communication check;
     public Light warning;
     float delta = 0.0f;
     float start = 0.0f;
 	public GameObject fuel;
-	private float min = 0;
-	private float max = 6.25f;
-
+	private float Fluidmin = 0;
+	private float Fluidmax = 6.25f;
     // Use this for initialization
     void Start()
     {
-        rend =test.GetComponent<Renderer>();
-        SetCountText();
-        HydrogenIn = false;
-        OxygenIn = false;
-		fluid.Stop();
-       // col = new Color(1, 1, 1);
+        //Stop particle system and set fuel amount
+        count = Start_amount;
+        fluid.Stop();
+		fuel.transform.localScale += new Vector3 (0, (Fluidmax - Fluidmin)*count / max_amount, 0);
     }
     void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Fueling_Cell"))
         {
-            GameObject temp = other.gameObject;
-            Arm_Controller playerScript = temp.transform.parent.gameObject.transform.parent.gameObject.transform.parent.gameObject.transform.parent.gameObject.GetComponent<Arm_Controller>();
-			if (controller.ButtonPressed ("Button1") && playerScript.counter == 120) {
-				if (count != 100) {
+            Arm_Controller playerScript = other.gameObject.transform.parent.gameObject.transform.parent.gameObject.transform.parent.gameObject.transform.parent.gameObject.GetComponent<Arm_Controller>();
+            if (controller.ButtonPressed("Button1") && playerScript.counter == 120 && check.Ready()) {
+				if (count != max_amount) {
 					fluid.Play ();
 					count += 1;
-					fuel.transform.localScale += new Vector3 (0, (max - min) / 100, 0);
+					fuel.transform.localScale += new Vector3 (0, (Fluidmax - Fluidmin) / max_amount, 0);
 				} 
 			} else {
 				fluid.Stop();
+           
 			}
         }
     }
 
-    void SetCountText()
+    private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag("Fueling_Cell"))
+        {
+            Arm_Controller Script = other.gameObject.transform.parent.gameObject.transform.parent.gameObject.transform.parent.gameObject.transform.parent.gameObject.GetComponent<Arm_Controller>();
+            check.SetBool(Script.type, true);
 
+        }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+       
+        if (other.gameObject.CompareTag("Fueling_Cell"))
+        {
+            Arm_Controller Script = other.gameObject.transform.parent.gameObject.transform.parent.gameObject.transform.parent.gameObject.transform.parent.gameObject.GetComponent<Arm_Controller>();
+            check.SetBool(Script.type, false);
+        }
+    }
     private void Update()
     {
- 
-            if (count == 100)
-            {
-                float start = Time.time;
-                warning.intensity = 1;
-            }
+		if (count == max_amount)
+        {
+            float start = Time.time;
+            warning.intensity = 1;
+        }
+    }
+}
 
-            /*if (count > 100)
+/*if (count > 100)
             {
                 delta = Time.time- start;
                 if (warning.intensity == 1 && delta >0.2f )
@@ -78,9 +92,5 @@ public class Fueling_Counter_Real : MonoBehaviour
                     warning.intensity = 1;
                 }
             }*/
-        /*float number = (float)count / 100.0f;
-        rend.material.color = new Color(1.0f-number, 1.0f, 1.0f-number);*/
-    }
 
 
-}

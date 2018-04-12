@@ -1,32 +1,75 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: da3c6d52398b04945868678e0e069133
-timeCreated: 1523255221
+
+guid: 2b72dddde4ca54b7098fa29e1e7c48fb
+timeCreated: 1523274025
+
 licenseType: Free
-=======
-guid: 82402eb028fb5db4ab8834653f33d359
->>>>>>> 1fd2476f348396a039a639e8679ffacae0abaf0d
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: Box001
     100002: Box002
-    100004: Box003
-    100006: //RootNode
+    100004: Cone001
+    100006: Cone002
+    100008: Cylinder001
+    100010: Cylinder004
+    100012: Cylinder005
+    100014: Cylinder006
+    100016: Cylinder007
+    100018: Cylinder008
+    100020: Cylinder009
+    100022: Cylinder010
+    100024: //RootNode
     400000: Box001
     400002: Box002
-    400004: Box003
-    400006: //RootNode
+    400004: Cone001
+    400006: Cone002
+    400008: Cylinder001
+    400010: Cylinder004
+    400012: Cylinder005
+    400014: Cylinder006
+    400016: Cylinder007
+    400018: Cylinder008
+    400020: Cylinder009
+    400022: Cylinder010
+    400024: //RootNode
     2100000: No Name
     2300000: Box001
     2300002: Box002
-    2300004: Box003
+    2300004: Cone001
+    2300006: Cone002
+    2300008: Cylinder001
+    2300010: Cylinder004
+    2300012: Cylinder005
+    2300014: Cylinder006
+    2300016: Cylinder007
+    2300018: Cylinder008
+    2300020: Cylinder009
+    2300022: Cylinder010
     3300000: Box001
     3300002: Box002
-    3300004: Box003
-    4300000: Box001
-    4300002: Box002
-    4300004: Box003
+    3300004: Cone001
+    3300006: Cone002
+    3300008: Cylinder001
+    3300010: Cylinder004
+    3300012: Cylinder005
+    3300014: Cylinder006
+    3300016: Cylinder007
+    3300018: Cylinder008
+    3300020: Cylinder009
+    3300022: Cylinder010
+    4300000: Cylinder001
+    4300002: Cone001
+    4300004: Box001
+    4300006: Cone002
+    4300008: Cylinder004
+    4300010: Cylinder005
+    4300012: Cylinder006
+    4300014: Cylinder007
+    4300016: Cylinder008
+    4300018: Box002
+    4300020: Cylinder009
+    4300022: Cylinder010
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -39,12 +82,12 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
-    animationImportErrors: 
-    animationImportWarnings: 
-    animationRetargetingWarnings: 
+    motionNodeName:
+    rigImportErrors:
+    rigImportWarnings:
+    animationImportErrors:
+    animationImportWarnings:
+    animationRetargetingWarnings:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     animationCompression: 1
@@ -96,7 +139,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    rootMotionBoneName: 
+    rootMotionBoneName:
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
@@ -105,6 +148,6 @@ ModelImporter:
   animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  userData:
+  assetBundleName:
+  assetBundleVariant:

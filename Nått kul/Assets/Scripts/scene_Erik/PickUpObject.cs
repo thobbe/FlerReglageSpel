@@ -5,23 +5,34 @@ using UnityEngine;
 public class PickUpObject : MonoBehaviour {
 
     public Transform player;
-    public float throwForce = 10;
+    public float throwForce = 30;
     public bool hasPlayer = false;
     bool beingCarried = false;
+    public bool inserted = false;
 
     private Rigidbody rb;
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player"))
+		
+        if(other.gameObject.CompareTag("Player")) //will only work if the Player has it's tag set to Player in Unity!!!!!!
         {
             hasPlayer = true;
         }
-        
+
+        if (other.gameObject.CompareTag("Zone")) 
+        {
+            inserted = true;
+            Destroy(gameObject);
+            //Debug.Log("Batteri");
+        }
+
+
     }
 
     void OnTriggerExit(Collider other)
     {
+		
         if (other.gameObject.CompareTag("Player"))
         {
             hasPlayer = false;
