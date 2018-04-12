@@ -1,25 +1,15 @@
 fileFormatVersion: 2
-guid: 82402eb028fb5db4ab8834653f33d359
+guid: aebf907a9f6ce6c4dade3de2b7633276
+timeCreated: 1523520430
+licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Box001
-    100002: Box002
-    100004: Box003
-    100006: //RootNode
-    400000: Box001
-    400002: Box002
-    400004: Box003
-    400006: //RootNode
-    2300000: Box001
-    2300002: Box002
-    2300004: Box003
-    3300000: Box001
-    3300002: Box002
-    3300004: Box003
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: Box001
-    4300002: Box002
-    4300004: Box003
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -45,7 +35,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
