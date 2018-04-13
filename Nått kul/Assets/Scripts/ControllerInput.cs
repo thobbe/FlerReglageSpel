@@ -5,11 +5,11 @@ using UnityEngine;
 public class ControllerInput {
 
     //TODO implement the buttons and joysticks
-
     //Constructor that initiate the controller
     public ControllerInput()
     {
         //TODO initiate the different buttons and joystick
+        
     }
 
     //Get a smoth value between -1 and 1 that represent the direction. The function return both from keybord and from joysticks. 
@@ -106,7 +106,18 @@ public class ControllerInput {
     // bool pressed = controller.ButtonPressed("Button1"); 
     public bool ButtonPressed(string Button)
     {
-        if(Button == "Button1")
+        bool test = Arduino.instance.ButtonPressed();
+        Debug.Log(test);
+        if (test)
+        {
+            //Debug.Log("Sant");
+        }
+        else
+        {
+            //Debug.Log("Falsk");
+        }
+        return Arduino.instance.ButtonPressed();
+        /*if(Button == "Button1")
         {
             if (Input.GetButton("Button1"))
             {
@@ -156,7 +167,7 @@ public class ControllerInput {
             Debug.Log("Error: Wrong input, check argument for function ControllerInput.ButtonPressed");
            
         }
-        return false;
+        return false;*/
 
     }
 
