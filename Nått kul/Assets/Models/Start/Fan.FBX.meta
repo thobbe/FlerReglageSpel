@@ -1,77 +1,97 @@
 fileFormatVersion: 2
-
-guid: 26289f25f58226042bedc5755404a8c5
-timeCreated: 1523520634
+guid: 4e38fb43b8e67fb4d9f514cdf65ec7d8
+timeCreated: 1523520430
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
-
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: pCylinder1
-    100004: pCylinder2
-    100006: pCylinder3
-    100008: pCylinder4
-    100010: transform1
-    100012: transform2
-    100014: transform3
-    400000: //RootNode
-    400002: pCylinder1
-    400004: pCylinder2
-    400006: pCylinder3
-    400008: pCylinder4
-    400010: transform1
-    400012: transform2
-    400014: transform3
-<<<<<<< HEAD
-    2100000: lambert1
-=======
->>>>>>> 9b96b96b12336462b5d102d51b3e29146b9c757d
-    2300000: pCylinder4
-    3300000: pCylinder4
-    4300000: pCylinder4
+    100000: Box001
+    100002: Box002
+    100004: Box003
+    100006: Box004
+    100008: Cylinder001
+    100010: Cylinder002
+    100012: Cylinder003
+    100014: Cylinder004
+    100016: //RootNode
+    100018: Line001
+    100020: Line002
+    100022: Sphere001
+    100024: Sphere002
+    100026: Sphere003
+    100028: Sphere004
+    400000: Box001
+    400002: Box002
+    400004: Box003
+    400006: Box004
+    400008: Cylinder001
+    400010: Cylinder002
+    400012: Cylinder003
+    400014: Cylinder004
+    400016: //RootNode
+    400018: Line001
+    400020: Line002
+    400022: Sphere001
+    400024: Sphere002
+    400026: Sphere003
+    400028: Sphere004
+    2300000: Box001
+    2300002: Box002
+    2300004: Box003
+    2300006: Box004
+    2300008: Cylinder001
+    2300010: Cylinder002
+    2300012: Cylinder003
+    2300014: Cylinder004
+    2300016: Sphere001
+    2300018: Sphere002
+    2300020: Sphere003
+    2300022: Sphere004
+    3300000: Box001
+    3300002: Box002
+    3300004: Box003
+    3300006: Box004
+    3300008: Cylinder001
+    3300010: Cylinder002
+    3300012: Cylinder003
+    3300014: Cylinder004
+    3300016: Sphere001
+    3300018: Sphere002
+    3300020: Sphere003
+    3300022: Sphere004
+    4300000: Box001
+    4300002: Cylinder001
+    4300004: Cylinder002
+    4300006: Box002
+    4300008: Box003
+    4300010: Box004
+    4300012: Sphere001
+    4300014: Sphere002
+    4300016: Sphere003
+    4300018: Sphere004
+    4300020: Cylinder003
+    4300022: Cylinder004
     9500000: //RootNode
-<<<<<<< HEAD
-  externalObjects: {}
-=======
->>>>>>> 9b96b96b12336462b5d102d51b3e29146b9c757d
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-<<<<<<< HEAD
-    materialLocation: 1
-=======
->>>>>>> 9b96b96b12336462b5d102d51b3e29146b9c757d
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-<<<<<<< HEAD
-    rigImportErrors: 
-    rigImportWarnings: 
-=======
->>>>>>> 9b96b96b12336462b5d102d51b3e29146b9c757d
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-<<<<<<< HEAD
-    importAnimatedCustomProperties: 0
-=======
->>>>>>> 9b96b96b12336462b5d102d51b3e29146b9c757d
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-<<<<<<< HEAD
-    extraUserProperties: []
-=======
->>>>>>> 9b96b96b12336462b5d102d51b3e29146b9c757d
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -79,25 +99,13 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-<<<<<<< HEAD
-    importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
-=======
-    importBlendShapes: 1
->>>>>>> 9b96b96b12336462b5d102d51b3e29146b9c757d
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
-<<<<<<< HEAD
-    preserveHierarchy: 0
-    indexFormat: 0
-=======
->>>>>>> 9b96b96b12336462b5d102d51b3e29146b9c757d
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -107,10 +115,6 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-<<<<<<< HEAD
-    normalCalculationMode: 4
-=======
->>>>>>> 9b96b96b12336462b5d102d51b3e29146b9c757d
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
