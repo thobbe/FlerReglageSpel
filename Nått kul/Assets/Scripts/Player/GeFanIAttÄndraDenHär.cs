@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine;
 using System.Collections;
 using System.IO;        // for communication with arduino 
 using System.IO.Ports;  // for communication with arduino 
@@ -24,7 +23,7 @@ public class GiveMeLove: MonoBehaviour
 	private int y_value = 0;
 	private int z_value = 0; 
 
-	SerialPort sp = new SerialPort("COM9", 115200); //(9600)  Opens a connection between Unity and a Serialport. 
+	SerialPort sp = new SerialPort("COM4", 115200); //(9600)  Opens a connection between Unity and a Serialport. 
 
 	void Start()
 	{
