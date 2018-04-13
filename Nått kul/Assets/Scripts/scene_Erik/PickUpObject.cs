@@ -53,7 +53,7 @@ public class PickUpObject : MonoBehaviour {
                 rb.isKinematic = false;
                 transform.parent = null;
                 beingCarried = false;
-                rb.AddForce(player.forward * throwForce);
+                //rb.AddForce(player.forward * throwForce);
             }
         }
         else
