@@ -304,6 +304,46 @@ Transform:
   m_PrefabParentObject: {fileID: 4719628443164282, guid: a0270726fd2198248b87ce03f74751cc,
     type: 2}
   m_PrefabInternal: {fileID: 2131828780}
+--- !u!1 &490695381
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 490695383}
+  - component: {fileID: 490695382}
+  m_Layer: 0
+  m_Name: _Arduino
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &490695382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 490695381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b10f0669782954d83cf4460104df30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &490695383
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 490695381}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15.102554, y: 0.2993269, z: -0.16437423}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &497222749 stripped
 Light:
   m_PrefabParentObject: {fileID: 108542233817850230, guid: 52d64933f8731f24b888935023de7988,
