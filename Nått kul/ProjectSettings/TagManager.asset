@@ -11,6 +11,10 @@ TagManager:
   - Fueling_Cell
   - Battery
   - Zone
+  - Cable Green
+  - Cable Red
+  - Numpad Red
+  - Numpad Green
   layers:
   - Default
   - TransparentFX
