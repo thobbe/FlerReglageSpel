@@ -29,7 +29,6 @@ public class UnlockDoor : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("nära röd");
             nearby = true;
         }
     }
@@ -61,7 +60,7 @@ public class UnlockDoor : MonoBehaviour {
     }
 	
 	void Update () {
-        if (controller.ButtonPressed("Button2"))
+		if (controller.ButtonPressed("Button2") && GameObject.Find("Inserted_Battery_Red").GetComponent<Battery_insert>().insert)
         {
             cableRed.GetComponent<Renderer>().material = GlowRed;
 
@@ -71,11 +70,11 @@ public class UnlockDoor : MonoBehaviour {
             }
 
         }
-        else if (controller.ButtonPressed("Button3"))
+		else if (controller.ButtonPressed("Button3") && GameObject.Find("Inserted_Battery_Green").GetComponent<Battery_insert>().insert)
         {
             cableGreen.GetComponent<Renderer>().material = GlowGreen;
 
-            if (controller.ButtonPressed("Button1"))
+            if (nearby && controller.ButtonPressed("Button1"))
             {
                 UnlockGreen = true;
             }
@@ -86,7 +85,7 @@ public class UnlockDoor : MonoBehaviour {
             cableRed.GetComponent<Renderer>().material = TurnOffRed;
         }
 
-        Debug.Log(nearby);
+        
         if (UnlockRed && UnlockGreen)
         {
             Open();

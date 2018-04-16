@@ -106,7 +106,7 @@ public class ControllerInput {
     // bool pressed = controller.ButtonPressed("Button1"); 
     public bool ButtonPressed(string Button)
     {
-        bool test = Arduino.instance.ButtonPressed();
+       /* bool test = Arduino.instance.ButtonPressed();
         Debug.Log(test);
         if (test)
         {
@@ -116,8 +116,9 @@ public class ControllerInput {
         {
             //Debug.Log("Falsk");
         }
-        return Arduino.instance.ButtonPressed();
-        /*if(Button == "Button1")
+        return Arduino.instance.ButtonPressed();*/
+        
+		if(Button == "Button1")
         {
             if (Input.GetButton("Button1"))
             {
@@ -167,7 +168,7 @@ public class ControllerInput {
             Debug.Log("Error: Wrong input, check argument for function ControllerInput.ButtonPressed");
            
         }
-        return false;*/
+        return false;
 
     }
 
