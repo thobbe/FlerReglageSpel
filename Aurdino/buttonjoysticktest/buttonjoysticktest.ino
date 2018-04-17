@@ -76,7 +76,7 @@ void loop() {
   //Serial.print(yVal);
 
  // currentValue[2] = buttonState;
-
+    Serial.println(' ');
     for(int i=0; i<2; ++i)
     {
       Serial.print(currentValue[i]);

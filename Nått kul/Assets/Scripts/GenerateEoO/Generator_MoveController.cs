@@ -20,5 +20,9 @@ public class Generator_MoveController : MonoBehaviour {
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
         rb.AddForce(movement * speed);
+
+		//transform.Translate (speed * Input.GetAxis ("Horizontal") * Time.deltaTime, 0.0f, speed * Input.GetAxis ("Vertical") * Time.deltaTime);
+
+
     }
 }

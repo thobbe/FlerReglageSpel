@@ -36,11 +36,11 @@ public class Fueling_Counter_Real : MonoBehaviour
         if (other.gameObject.CompareTag("Fueling_Cell"))
         {
             Arm_Controller playerScript = other.gameObject.transform.parent.gameObject.transform.parent.gameObject.transform.parent.gameObject.transform.parent.gameObject.GetComponent<Arm_Controller>();
-            if (check.Ready()&&controller.ButtonPressed("Button1") && playerScript.counter == 120 ) {
+            if (check.Ready() && controller.ButtonPressed("Button1") && playerScript.counter == 120 ) {
 				if (count != max_amount) {
 					fluid.Play ();
 					count += 1;
-					fuel.transform.localScale += new Vector3 (0, (Fluidmax - Fluidmin) / max_amount, 0);
+					//fuel.transform.localScale += new Vector3 (0, (Fluidmax - Fluidmin) / max_amount, 0);
 				} 
 			} else {
 				fluid.Stop();
