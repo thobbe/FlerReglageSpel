@@ -57,16 +57,15 @@ public class Arduino : MonoBehaviour {
 
     public void ArduinoDecrypter()
     {
-        string NewLine;
-        
+        string NewLine; 
         NewLine = sp.ReadLine(); // All data from the Arduino are putted in the string NewLine: [x' 'y].
-        if (NewLine.Length == 11)
+        if (NewLine.Length == 15)
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 14; i++)
             {
                 controllers[i] = (int)(NewLine[i] - '0');
             }
-            for (int i = 0; i < 10; i=i+2)
+            for (int i = 0; i < 14; i = i + 2)
             {
                 if (controllers[i] == 1)
                 {
@@ -76,17 +75,20 @@ public class Arduino : MonoBehaviour {
                 {
                     buttons[i] = false;
                 }
-                if (controllers[i+1] == 1)
+                if (controllers[i + 1] == 1)
                 {
-                    buttons[i+1] = true;
+                    buttons[i + 1] = true;
                 }
                 else
                 {
-                    buttons[i+1] = false;
+                    buttons[i + 1] = false;
                 }
             }
         }
-        sp.Write("1");
+        for (int i = 0; i < 14; i = i + 2)
+        {
+            Debug.Log(controllers[i]+ " ");
+        }
     }
     
     // Update is called once per frame
