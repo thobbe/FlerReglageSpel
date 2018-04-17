@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/start_scene.unity
     guid: 3efb19146fa01ab4c862152101704899
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/scene_Erik.unity
     guid: c75b38acdf6969642b844ad28c42ce9f
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Fueling.unity
     guid: 6c7a17f0a855e0148a2a2e8bd74d2040
   - enabled: 1
@@ -20,3 +20,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Fueling_real.unity
     guid: e04fc7d1f9ce0664f8dd364f8aa9531c
+  - enabled: 1
+    path: Assets/Scenes/generateEoO.unity
+    guid: 5f53f05c9bdf94fe29c45f1f3d3ba435

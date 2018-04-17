@@ -11,8 +11,15 @@ TagManager:
   - Fueling_Cell
   - Battery
   - Zone
+<<<<<<< HEAD
   - player
   - mission
+=======
+  - Cable Green
+  - Cable Red
+  - Numpad Red
+  - Numpad Green
+>>>>>>> 67e3398576b6a667cd14734d90219a8a983ebbd1
   layers:
   - Default
   - TransparentFX
