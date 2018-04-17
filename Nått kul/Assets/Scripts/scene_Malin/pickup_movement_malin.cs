@@ -2,7 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class helper_malin : MonoBehaviour {
+
+/* ***************************************************
+ * 
+ * 		Får "pick-up" att röra sig upp och ner
+ * 
+ * 
+ * **************************************************/
+
+public class pickup_movement_malin : MonoBehaviour {
 	
 	//changes the speed of the movement
 	private float speed;
