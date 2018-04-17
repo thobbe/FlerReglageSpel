@@ -75,6 +75,7 @@ public class Fueling_Counter_Real : MonoBehaviour
             float start = Time.time;
             warning.intensity = 1;
         }
+		check.update_fuel_counter (this.gameObject.name, count);
     }
 }
 
