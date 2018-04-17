@@ -2,124 +2,110 @@
 using System.Collections;
 using System.IO;        // for communication with arduino 
 using System.IO.Ports;  // for communication with arduino 
-// don't know if all are used under this line.. 
 using System;
 using System.Linq;
 using System.Collections.Generic;
 public class Arduino : MonoBehaviour {
-
+    //Used so no more instances of the class is created
     public static Arduino instance = null;
     private bool pressed = false; // contains  x- and z- valuesr from joystick (ps2)
-    private bool first = true;
     private SerialPort sp = new SerialPort("COM5", 9600); //(9600)  Opens a connection between Unity and a Serialport. 
     private int Value;
+    int count = 0;
+    int WholeCount = 0;
+    
 
+    //Knappar
+    bool [] buttons = new bool[5] { false, false, false, false, false };
+    bool [] buttons_light = new bool[5] { false, false, false, false, false };
+    int[] controllers = new int[10] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
+    //Checks so no more instances of this class is created
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
             open();
 
-        }else if(instance != this)
+        } else if (instance != this)
         {
             Destroy(gameObject);
         }
     }
-
+    // Open the stream to the arduino
     private void open()
     {
         sp.Open();
-        sp.ReadTimeout = 5; // freeze if higher
-        first = false;
+        sp.ReadTimeout = 1; // freeze if higher
     }
+    //Update the data from the arduino
     private void get_data()
     {
         if (sp.IsOpen)
         {
             try
             {
-                // Value = sp.ReadByte(); // nothing works without it 
-                //sp.ReadByte();
-                
-                pressed = ArduinoValueToUntiyValue(); // takes the string with info from arduino and creates an array with w ints that can be used in unity.
-
-                // MoveObject(ref movement, ref coordinate);
+                ArduinoDecrypter(); // takes the string with info from arduino and creates an array with w ints that can be used in unity.
             }
             catch (System.Exception)
             {
-
+                Debug.Log("Can't read from Arduino");
             }
         }
     }
-    public bool ButtonPressed()
-    {
-        if (first)
-        {
-            open();
-        }
 
-        get_data();
-        if (pressed)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-        //return pressed;
-    }
-
-    public bool ArduinoValueToUntiyValue()
+    public void ArduinoDecrypter()
     {
-        //This function takes one string with values from the Arduino as argument and convert it to an array with int-values for x and z. 
-        /* Example: 
-     * private string Namn;
-     * 
-     * ArduinoValueToUnityValue(Namn);
-     * 
-     * print(xy_Value) ( prints: "[x,y]") 
-     * 
-    */
         string NewLine;
-        NewLine  = sp.ReadLine(); // All data from the Arduino are putted in the string NewLine: [x' 'y].
-        //Debug.Log(NewLine);
-       // Debug.Log()
-        //string b = NewLine
-        string[] array = NewLine.Split(' '); // The string is divided at the  ' ' and transforms to an array with 2 slots. 
-        //string xValue = array[0]; // x value (string value)
-        //string yValue = array[1]; // y value (string value) 
-
-        //int x_Value = Convert.ToInt32(xValue); // convert array value to int
-        //int y_Value = Convert.ToInt32(yValue); // 
-
-
-        //int[] xy_Value = new int[2]; //create an  int-array with x,y value ([x,y])
-        //xy_Value[0] = x_Value;
-        //xy_Value[1] = y_Value;
-        int value = Convert.ToInt32(array[0]);
-        //Debug.Log(value);
-        if (value == 1)
+        
+        NewLine = sp.ReadLine(); // All data from the Arduino are putted in the string NewLine: [x' 'y].
+        if (NewLine.Length == 11)
         {
-            //Debug.Log("True");
-            return true;
+            for (int i = 0; i < 10; i++)
+            {
+                controllers[i] = (int)(NewLine[i] - '0');
+            }
+            for (int i = 0; i < 10; i=i+2)
+            {
+                if (controllers[i] == 1)
+                {
+                    buttons[i] = true;
+                }
+                else
+                {
+                    buttons[i] = false;
+                }
+                if (controllers[i+1] == 1)
+                {
+                    buttons[i+1] = true;
+                }
+                else
+                {
+                    buttons[i+1] = false;
+                }
+            }
         }
-        else
-        {
-            //Debug.Log("False");
-            return false;
-        }
-        // returns an array
+        sp.Write("1");
     }
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    
+    // Update is called once per frame
+    void LateUpdate () {
+        get_data();
+    }
+    //When object is destroyed we close the stream to the arduino
+    void OnDestroy()
+    {
+        sp.Close();
+        print("Script was destroyed");
+    }
+
+    public bool ButtonPressed(int nr)
+    {
+        return buttons[nr - 1];
+    }
+    public void LightButton(int nr)
+    {
+        
+    }
 }
