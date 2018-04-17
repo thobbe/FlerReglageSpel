@@ -11,6 +11,8 @@ TagManager:
   - Fueling_Cell
   - Battery
   - Zone
+  - player
+  - mission
   layers:
   - Default
   - TransparentFX
