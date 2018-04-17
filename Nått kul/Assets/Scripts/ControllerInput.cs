@@ -108,11 +108,11 @@ public class ControllerInput {
     {
         if(Button == "Button1")
         {
-            if (Arduino.instance.ButtonPressed(1))
+           /* if (Arduino.instance.ButtonPressed(1))
             {
                 return Arduino.instance.ButtonPressed(1);
             }
-            else if (Input.GetButton("Button1"))
+            else */ if (Input.GetButton("Button1"))
             {
                 return Input.GetButton("Button1");
             }
@@ -124,11 +124,11 @@ public class ControllerInput {
         }
         else if(Button == "Button2")
         {
-            if (Arduino.instance.ButtonPressed(2))
+           /* if (Arduino.instance.ButtonPressed(2))
             {
                 return Arduino.instance.ButtonPressed(2);
             }
-            else if (Input.GetButton("Button2"))
+            else */if (Input.GetButton("Button2"))
             {
                 return Input.GetButton("Button2");
             }
@@ -139,11 +139,11 @@ public class ControllerInput {
         }
         else if(Button == "Button3")
         {
-            if (Arduino.instance.ButtonPressed(3))
+           /* if (Arduino.instance.ButtonPressed(3))
             {
                 return Arduino.instance.ButtonPressed(3);
             }
-            else if (Input.GetButton(Button))
+            else */if (Input.GetButton(Button))
             {
                 return Input.GetButton(Button);
             }
@@ -154,11 +154,11 @@ public class ControllerInput {
         }
         else if(Button == "Button4")
         {
-            if (Arduino.instance.ButtonPressed(4))
+            /*if (Arduino.instance.ButtonPressed(4))
             {
                 return Arduino.instance.ButtonPressed(4);
             }
-            else if (Input.GetButton(Button))
+            else */if (Input.GetButton(Button))
             {
                 return Input.GetButton(Button);
             }
