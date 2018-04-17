@@ -1,26 +1,68 @@
 fileFormatVersion: 2
-guid: 0fc438e25a1493c4aa1710314ba312ad
+guid: 1884db6107a1bea4ea33a5c5cbbf81db
+timeCreated: 1523628324
+licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Box001
-    100002: Box002
-    100004: Box003
-    100006: //RootNode
-    400000: Box001
-    400002: Box002
-    400004: Box003
-    400006: //RootNode
+    100000: Body
+    100002: Cylinder003
+    100004: Cylinder004
+    100006: Head
+    100008: //RootNode
+    100010: LeftArm
+    100012: LeftEar
+    100014: RightArm
+    100016: RightEar
+    100018: Sphere002
+    100020: Sphere003
+    100022: Wheel
+    400000: Body
+    400002: Cylinder003
+    400004: Cylinder004
+    400006: Head
+    400008: //RootNode
+    400010: LeftArm
+    400012: LeftEar
+    400014: RightArm
+    400016: RightEar
+    400018: Sphere002
+    400020: Sphere003
+    400022: Wheel
     2100000: No Name
-    2300000: Box001
-    2300002: Box002
-    2300004: Box003
-    3300000: Box001
-    3300002: Box002
-    3300004: Box003
-    4300000: Box001
-    4300002: Box002
-    4300004: Box003
+    2300000: Body
+    2300002: Cylinder003
+    2300004: Cylinder004
+    2300006: Head
+    2300008: LeftArm
+    2300010: LeftEar
+    2300012: RightArm
+    2300014: RightEar
+    2300016: Sphere002
+    2300018: Sphere003
+    2300020: Wheel
+    3300000: Body
+    3300002: Cylinder003
+    3300004: Cylinder004
+    3300006: Head
+    3300008: LeftArm
+    3300010: LeftEar
+    3300012: RightArm
+    3300014: RightEar
+    3300016: Sphere002
+    3300018: Sphere003
+    3300020: Wheel
+    4300000: Wheel
+    4300002: Body
+    4300004: Head
+    4300006: RightArm
+    4300008: LeftArm
+    4300010: RightEar
+    4300012: LeftEar
+    4300014: Cylinder003
+    4300016: Cylinder004
+    4300018: Sphere002
+    4300020: Sphere003
     9500000: //RootNode
   externalObjects: {}
   materials:
