@@ -1,7 +1,7 @@
 // vilken pin som knapparna sitter på 
 const int b1 = 2;
 const int b2 = 3;
-int const declaration_length = 10;
+int const declaration_length = 14;
 int declaration[declaration_length];
 
 // varibler som kommer representera in signal till arduinon 
@@ -38,7 +38,7 @@ void loop() {
     //Serial.write(0);
     //Serial.flush();
   }
-  declaration[1] =0;
+  declaration[1] =0;  
   declaration[2] =0;
   declaration[3] =0;
   declaration[4] =0;
@@ -47,6 +47,10 @@ void loop() {
   declaration[7] =0;
   declaration[8] =0;
   declaration[9] =0;
+  declaration[10] =0;   //Left
+  declaration[11] =0;
+  declaration[12] =0;
+  declaration[13] =0;
   
 
   for(int i = 0; i < declaration_length; i++){
