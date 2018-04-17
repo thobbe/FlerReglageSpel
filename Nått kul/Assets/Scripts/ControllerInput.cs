@@ -5,11 +5,11 @@ using UnityEngine;
 public class ControllerInput {
 
     //TODO implement the buttons and joysticks
-
     //Constructor that initiate the controller
     public ControllerInput()
     {
         //TODO initiate the different buttons and joystick
+        
     }
 
     //Get a smoth value between -1 and 1 that represent the direction. The function return both from keybord and from joysticks. 
@@ -108,7 +108,11 @@ public class ControllerInput {
     {
         if(Button == "Button1")
         {
-            if (Input.GetButton("Button1"))
+           /* if (Arduino.instance.ButtonPressed(1))
+            {
+                return Arduino.instance.ButtonPressed(1);
+            }
+            else */ if (Input.GetButton("Button1"))
             {
                 return Input.GetButton("Button1");
             }
@@ -120,7 +124,11 @@ public class ControllerInput {
         }
         else if(Button == "Button2")
         {
-            if (Input.GetButton("Button2"))
+           /* if (Arduino.instance.ButtonPressed(2))
+            {
+                return Arduino.instance.ButtonPressed(2);
+            }
+            else */if (Input.GetButton("Button2"))
             {
                 return Input.GetButton("Button2");
             }
@@ -131,7 +139,11 @@ public class ControllerInput {
         }
         else if(Button == "Button3")
         {
-            if (Input.GetButton(Button))
+           /* if (Arduino.instance.ButtonPressed(3))
+            {
+                return Arduino.instance.ButtonPressed(3);
+            }
+            else */if (Input.GetButton(Button))
             {
                 return Input.GetButton(Button);
             }
@@ -142,7 +154,11 @@ public class ControllerInput {
         }
         else if(Button == "Button4")
         {
-            if (Input.GetButton(Button))
+            /*if (Arduino.instance.ButtonPressed(4))
+            {
+                return Arduino.instance.ButtonPressed(4);
+            }
+            else */if (Input.GetButton(Button))
             {
                 return Input.GetButton(Button);
             }
