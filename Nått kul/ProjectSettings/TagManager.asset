@@ -4,17 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Pick-up
-  - ArmOxygen
-  - Tube
-  - Oxygen1
+<<<<<<< HEAD
   - Fueling_Cell
-  - Battery
-  - Zone
-  - Cable Green
-  - Cable Red
-  - Numpad Red
-  - Numpad Green
+  - mission
+  - player
+  - Tube
+=======
+  - mission
+>>>>>>> 9b11a091ce9cfade38aecaec87ae34cf292f5e27
+  - Pick-up
   layers:
   - Default
   - TransparentFX
