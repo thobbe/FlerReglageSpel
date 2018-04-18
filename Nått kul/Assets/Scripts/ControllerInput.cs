@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class ControllerInput {
 
-    //TODO implement the buttons and joysticks
     //Constructor that initiate the controller
     public ControllerInput()
-    {
-        //TODO initiate the different buttons and joystick
-        
+    { 
     }
-
     //Get a smoth value between -1 and 1 that represent the direction. The function return both from keybord and from joysticks. 
     //There is two different joysticks "Left" and "Right" and values from the horizontal movement and vertical movement kan be found.
     //The Function is used like this:
@@ -19,85 +15,17 @@ public class ControllerInput {
     // float horizontal = controller.GetAxis("Left", "Horizontal"); 
     public float GetAxis(string Joystick_name, string type)
     {
-        if(Joystick_name == "Left")
+        string temp = Joystick_name + "_" + type;
+        if (Arduino.instance.GetAxis(temp) != 0)
         {
-            if (type == "Horizontal")
-            {
-                return Input.GetAxis("Left_Horizontal");
-            }else if (type == "Vertical")
-            {
-                return Input.GetAxis("Left_Vertical");
-            }
-        }else if (Joystick_name == "Right")
-        {
-            if (type == "Horizontal")
-            {
-               return Input.GetAxis("Right_Horizontal");
-            }else if (type == "Vertical")
-            {
-                return Input.GetAxis("Right_Vertical");
-            }
+            return Arduino.instance.GetAxis(temp);
         }
-        return 0.0f;
+        else
+        {
+            return Input.GetAxis(temp);
+        }
     }
 
-    public float JoystickPulled(string Joystick_name, string type)
-    {
-        if (Joystick_name == "Left")
-        {
-            if (type == "Horizontal")
-            {
-                if (Input.GetAxis("Left_Horizontal") > 0)
-                {
-                    return 1.0f;
-                }else if(Input.GetAxis("Left_Horizontal") > 0)
-                {
-                    return -1.0f;
-                }
-                return 0;
-            }
-            else if (type == "Vertical")
-            {
-                if (Input.GetAxis("Left_Vertical") > 0)
-                {
-                    return 1.0f;
-                }
-                else if (Input.GetAxis("Left_Vertical") > 0)
-                {
-                    return -1.0f;
-                }
-                return 0;
-            }
-        }
-        else if (Joystick_name == "Right")
-        {
-            if (type == "Horizontal")
-            {
-                if (Input.GetAxis("Right_Horizontal") > 0)
-                {
-                    return 1.0f;
-                }
-                else if (Input.GetAxis("Right_Horizontal") > 0)
-                {
-                    return -1.0f;
-                }
-                return 0;
-            }
-            else if (type == "Vertical")
-            {
-                if (Input.GetAxis("Right_Vertical") > 0)
-                {
-                    return 1.0f;
-                }
-                else if (Input.GetAxis("Right_Vertical") > 0)
-                {
-                    return -1.0f;
-                }
-                return 0;
-            }
-        }
-        return 0.0f;
-    }
     //ButtonPressed returns true if the specefic button has been pressed otherwise it return false.
     //There are four accepted arguments "Button1", "Button2", "Button3" and "Button4".
     //False is also return if the wrong argument is send in and a error messages is displayed in the console.
@@ -108,11 +36,11 @@ public class ControllerInput {
     {
         if(Button == "Button1")
         {
-           /* if (Arduino.instance.ButtonPressed(1))
+           if (Arduino.instance.ButtonPressed(1))
             {
                 return Arduino.instance.ButtonPressed(1);
             }
-            else */ if (Input.GetButton("Button1"))
+            else if (Input.GetButton("Button1"))
             {
                 return Input.GetButton("Button1");
             }
@@ -124,11 +52,11 @@ public class ControllerInput {
         }
         else if(Button == "Button2")
         {
-           /* if (Arduino.instance.ButtonPressed(2))
+           if (Arduino.instance.ButtonPressed(2))
             {
                 return Arduino.instance.ButtonPressed(2);
             }
-            else */if (Input.GetButton("Button2"))
+            else if (Input.GetButton("Button2"))
             {
                 return Input.GetButton("Button2");
             }
@@ -139,11 +67,11 @@ public class ControllerInput {
         }
         else if(Button == "Button3")
         {
-           /* if (Arduino.instance.ButtonPressed(3))
+            if (Arduino.instance.ButtonPressed(3))
             {
                 return Arduino.instance.ButtonPressed(3);
             }
-            else */if (Input.GetButton(Button))
+            else if (Input.GetButton(Button))
             {
                 return Input.GetButton(Button);
             }
@@ -154,11 +82,11 @@ public class ControllerInput {
         }
         else if(Button == "Button4")
         {
-            /*if (Arduino.instance.ButtonPressed(4))
+            if (Arduino.instance.ButtonPressed(4))
             {
                 return Arduino.instance.ButtonPressed(4);
             }
-            else */if (Input.GetButton(Button))
+            else if (Input.GetButton(Button))
             {
                 return Input.GetButton(Button);
             }
@@ -169,11 +97,16 @@ public class ControllerInput {
         }
         else
         {
-            Debug.Log("Error: Wrong input, check argument for function ControllerInput.ButtonPressed");
-           
+            Debug.Log("Error: Wrong input, check argument for function ControllerInput.ButtonPressed"); 
         }
         return false;
 
+    }
+    //Controlls the lights of the buttons. Can turn on and off a light. CAUTION!!! Don't put this code in a function that 
+    // runs every frame because the light will start flickering.
+    public void Change_Light(bool light, int button)
+    {
+        Arduino.instance.LightButton(light, button);
     }
 
 }

@@ -40,11 +40,10 @@ public class Fueling_Counter_Real : MonoBehaviour
 				if (count != max_amount) {
 					fluid.Play ();
 					count += 1;
-					//fuel.transform.localScale += new Vector3 (0, (Fluidmax - Fluidmin) / max_amount, 0);
+					fuel.transform.localScale += new Vector3 (0, (Fluidmax - Fluidmin) / max_amount, 0);
 				} 
 			} else {
 				fluid.Stop();
-           
 			}
         }
     }

@@ -40,7 +40,6 @@ public class Arm_Communication : MonoBehaviour {
 	void Update ()
     {	
 		int sum = OT + OM + OB + HT + HM + HB;
-		Debug.Log (sum);
 		if (sum == 6000) {
 			Application.Quit();
 		}
