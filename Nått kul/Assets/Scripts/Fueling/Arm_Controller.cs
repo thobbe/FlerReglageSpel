@@ -17,9 +17,10 @@ public class Arm_Controller : MonoBehaviour {
         anim.Play("Robot Arm");
         anim.SetFloat("Direction", 0.0f);
         counter = 0;
+        controller.Change_Light(true, 1);
     }
 	
-	// Update is called once per frame
+	// Update is called once per frame. Checks for inputs.
 	void FixedUpdate () {
         //Rotate and extend arm
         if (type == "Hydrogen")
@@ -33,7 +34,7 @@ public class Arm_Controller : MonoBehaviour {
         if (Input.GetKey("escape"))
             Application.Quit();
     }
-
+    //Moves the arm.
     void Movement(string name, int max, int min)
     {
         //Extend arm 
@@ -72,7 +73,7 @@ public class Arm_Controller : MonoBehaviour {
             arm.transform.Rotate(new Vector3(0, controller.GetAxis(name, "Horizontal"), 0));
         }
     }
-
+    //Looks for colissions
     void OnTriggerStay(Collider other)
     {
         //Check if the collid is with the tube

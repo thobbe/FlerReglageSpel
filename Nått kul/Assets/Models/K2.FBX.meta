@@ -1,4 +1,22 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 83e2edf505421eb49866ef64fe9361ce
+timeCreated: 1523951603
+=======
+<<<<<<< HEAD
+guid: c3a68665fd735df4fb4dfd67a0eb9c6a
+timeCreated: 1524033124
+>>>>>>> eb49764219c43ea944f8f7730cb9cd7198f46afe
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    400000: //RootNode
+    2100000: No Name
+<<<<<<< HEAD
+=======
+=======
 guid: 10c1992a42dc2ed4fb5e180abee07602
 timeCreated: 1524034204
 licenseType: Free
@@ -7,30 +25,74 @@ ModelImporter:
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
+>>>>>>> 9b11a091ce9cfade38aecaec87ae34cf292f5e27
+>>>>>>> eb49764219c43ea944f8f7730cb9cd7198f46afe
     2300000: //RootNode
     3300000: //RootNode
     4300000: Head
     9500000: //RootNode
+<<<<<<< HEAD
+  externalObjects: {}
+=======
+<<<<<<< HEAD
+  externalObjects: {}
+=======
+>>>>>>> 9b11a091ce9cfade38aecaec87ae34cf292f5e27
+>>>>>>> eb49764219c43ea944f8f7730cb9cd7198f46afe
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+<<<<<<< HEAD
+    materialLocation: 1
+=======
+<<<<<<< HEAD
+    materialLocation: 1
+=======
+>>>>>>> 9b11a091ce9cfade38aecaec87ae34cf292f5e27
+>>>>>>> eb49764219c43ea944f8f7730cb9cd7198f46afe
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+<<<<<<< HEAD
+    rigImportErrors: 
+    rigImportWarnings: 
+=======
+<<<<<<< HEAD
+    rigImportErrors: 
+    rigImportWarnings: 
+=======
+>>>>>>> 9b11a091ce9cfade38aecaec87ae34cf292f5e27
+>>>>>>> eb49764219c43ea944f8f7730cb9cd7198f46afe
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+<<<<<<< HEAD
+    importAnimatedCustomProperties: 0
+=======
+<<<<<<< HEAD
+    importAnimatedCustomProperties: 0
+=======
+>>>>>>> 9b11a091ce9cfade38aecaec87ae34cf292f5e27
+>>>>>>> eb49764219c43ea944f8f7730cb9cd7198f46afe
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+<<<<<<< HEAD
+    extraUserProperties: []
+=======
+<<<<<<< HEAD
+    extraUserProperties: []
+=======
+>>>>>>> 9b11a091ce9cfade38aecaec87ae34cf292f5e27
+>>>>>>> eb49764219c43ea944f8f7730cb9cd7198f46afe
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -38,13 +100,36 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> eb49764219c43ea944f8f7730cb9cd7198f46afe
+    importVisibility: 1
     importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+<<<<<<< HEAD
+=======
+=======
+    importBlendShapes: 1
+>>>>>>> 9b11a091ce9cfade38aecaec87ae34cf292f5e27
+>>>>>>> eb49764219c43ea944f8f7730cb9cd7198f46afe
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+<<<<<<< HEAD
+    preserveHierarchy: 0
+    indexFormat: 0
+=======
+<<<<<<< HEAD
+    preserveHierarchy: 0
+    indexFormat: 0
+=======
+>>>>>>> 9b11a091ce9cfade38aecaec87ae34cf292f5e27
+>>>>>>> eb49764219c43ea944f8f7730cb9cd7198f46afe
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -54,6 +139,14 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+<<<<<<< HEAD
+    normalCalculationMode: 4
+=======
+<<<<<<< HEAD
+    normalCalculationMode: 4
+=======
+>>>>>>> 9b11a091ce9cfade38aecaec87ae34cf292f5e27
+>>>>>>> eb49764219c43ea944f8f7730cb9cd7198f46afe
   importAnimation: 1
   copyAvatar: 0
   humanDescription:

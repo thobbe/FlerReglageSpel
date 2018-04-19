@@ -4,7 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
+  - Fueling_Cell
   - mission
+  - player
+  - Tube
+=======
+  - mission
+>>>>>>> 9b11a091ce9cfade38aecaec87ae34cf292f5e27
   - Pick-up
   layers:
   - Default
