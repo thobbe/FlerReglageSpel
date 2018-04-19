@@ -40,11 +40,10 @@ public class Fueling_Counter_Real : MonoBehaviour
 				if (count != max_amount) {
 					fluid.Play ();
 					count += 1;
-					//fuel.transform.localScale += new Vector3 (0, (Fluidmax - Fluidmin) / max_amount, 0);
+					fuel.transform.localScale += new Vector3 (0, (Fluidmax - Fluidmin) / max_amount, 0);
 				} 
 			} else {
 				fluid.Stop();
-           
 			}
         }
     }
@@ -75,6 +74,7 @@ public class Fueling_Counter_Real : MonoBehaviour
             float start = Time.time;
             warning.intensity = 1;
         }
+		check.update_fuel_counter (this.gameObject.name, count);
     }
 }
 

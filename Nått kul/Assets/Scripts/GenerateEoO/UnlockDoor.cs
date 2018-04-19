@@ -5,13 +5,16 @@ using UnityEngine;
 public class UnlockDoor : MonoBehaviour {
     ControllerInput controller = new ControllerInput();
     public bool nearby;
-    public GameObject door;
+    public GameObject door1;
+    public GameObject door2;
     public GameObject cableRed;
     public GameObject cableGreen;
     public GameObject numpadRed;
     public GameObject numpadGreen;
-    public Vector3 startMarker;
-    public Vector3 endMarker;
+    private Vector3 startMarker1;
+    private Vector3 endMarker1;
+    private Vector3 startMarker2;
+    private Vector3 endMarker2;
     public float distance = 10;
     public float speed = 1.0F;
     public bool UnlockRed;
@@ -47,7 +50,8 @@ public class UnlockDoor : MonoBehaviour {
             startTime += Time.deltaTime;
 
         perc = startTime / endTime;
-        door.transform.position = Vector3.Lerp(startMarker, endMarker, perc);
+        door1.transform.position = Vector3.Lerp(startMarker1, endMarker1, perc);
+        door2.transform.position = Vector3.Lerp(startMarker2, endMarker2, perc);
     }
 
     void Start () {
@@ -55,8 +59,10 @@ public class UnlockDoor : MonoBehaviour {
         endTime = 5;
         nearby = false;
 
-        startMarker = door.transform.position;
-        endMarker = door.transform.position + Vector3.up * distance;
+        startMarker1 = door1.transform.position;
+        endMarker1 = door1.transform.position + Vector3.up * distance;
+        startMarker2 = door2.transform.position;
+        endMarker2 = door2.transform.position + Vector3.down * distance;
     }
 	
 	void Update () {

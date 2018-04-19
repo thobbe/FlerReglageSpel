@@ -4,17 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - mission
   - Pick-up
-  - ArmOxygen
-  - Tube
-  - Oxygen1
-  - Fueling_Cell
-  - Battery
-  - Zone
-  - Cable Green
-  - Cable Red
-  - Numpad Red
-  - Numpad Green
   layers:
   - Default
   - TransparentFX
